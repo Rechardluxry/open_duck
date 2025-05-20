@@ -8,6 +8,12 @@ Install uv
 curl -LsSf https://astral.sh/uv/install.sh | sh
 ```
 
+
+cd ~/Open_Duck_Playground
+pip install -e .
+进行安装
+
+
 # Training
 
 If you want to use the [imitation reward](https://la.disneyresearch.com/wp-content/uploads/BD_X_paper.pdf), you can generate reference motion with [this repo](https://github.com/apirrone/Open_Duck_reference_motion_generator)
