@@ -14,6 +14,38 @@ pip install -e .
 进行安装
 
 
+我的conda虚拟环境：
+
+(open_duck) lxr@lxr-System-Product-Name:~/lxr/Open_Duck_Playground$ python
+Python 3.12.2 | packaged by conda-forge | (main, Feb 16 2024, 20:50:58) [GCC 12.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import torch
+>>> # 查看 CUDA 版本
+>>> print(f"CUDA version: {torch.version.cuda}")
+CUDA version: 12.8
+>>> 
+>>> # 查看 cuDNN 版本
+>>> print(f"cuDNN version: {torch.backends.cudnn.version()}")
+cuDNN version: 90701
+>>> 
+>>> # 查看 PyTorch 版本
+>>> print(f"PyTorch version: {torch.__version__}")
+PyTorch version: 2.7.0+cu128
+>>> 
+>>> # 检查 CUDA 是否可用
+>>> print(f"CUDA is available: {torch.cuda.is_available()}")
+CUDA is available: True
+>>> # 检查当前使用的 GPU 设备
+>>> if torch.cuda.is_available():
+...     print(f"Current device: {torch.cuda.current_device()}")
+...     print(f"Device count: {torch.cuda.device_count()}")
+...     print(f"Device name: {torch.cuda.get_device_name(torch.cuda.current_device())}")
+... 
+Current device: 0
+Device count: 1
+Device name: NVIDIA GeForce RTX 4060
+
+
 # Training
 
 If you want to use the [imitation reward](https://la.disneyresearch.com/wp-content/uploads/BD_X_paper.pdf), you can generate reference motion with [this repo](https://github.com/apirrone/Open_Duck_reference_motion_generator)
